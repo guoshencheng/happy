@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title">
+    <title><%- title || "title" %></title>
+  </head>
+  <body>
+    <p class="title">
+      Century's Happy Days
+    </p>
+    <% for (var index in items) { %><% var item = items[index] %>
+      <div class="item_container">
+        <p>
+          <%- item.key %>
+        </p>
+        <p>
+          <%- item.days > 0 ? '已经 ' : '还有 ' %><%- Math.abs(item.days) %> 天
+        </p>
+      </div>
+    <% } %>
+  </body>
+</html>
