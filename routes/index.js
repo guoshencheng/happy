@@ -13,12 +13,12 @@ var getMonths = (from) => {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  axios.get("http://localhost:3000/db.json").then(value => {
+  axios.get("http://localhost:1214/db.json").then(value => {
     var array = value.data
     items = array.map(item => {
       return Object.assign({}, item, {days: getDays(item.time)})
     })
-    res.render('index', { title: 'Express', items});
+    res.render('index', { title: 'Century\'s Happy Days', items});
   }).catch(reason => {
     next(reason)
   })
